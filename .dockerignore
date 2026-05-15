@@ -1,0 +1,76 @@
+# ── Version control ───────────────────────────────────────────────────────────
+.git/
+.gitignore
+.gitattributes
+.github/
+
+# ── Node dependencies ─────────────────────────────────────────────────────────
+node_modules/
+package-lock.json
+.npm/
+.pnpm-store/
+.pnp*
+.yarn/cache
+
+# ── Build artefacts ───────────────────────────────────────────────────────────
+dist/
+build/
+*.tsbuildinfo
+
+# ── Test files ────────────────────────────────────────────────────────────────
+**/*.spec.ts
+**/*.e2e-spec.ts
+test/
+tests/
+**/__mocks__/
+coverage/
+jest.config.*
+junit.xml
+
+# ── Environment & secrets ─────────────────────────────────────────────────────
+.env
+.env.*
+!.env.example
+
+# ── Generated files ───────────────────────────────────────────────────────────
+swagger-spec.json
+openapi.json
+openapi.yaml
+nest-debug.log
+*.migration.sql
+
+# ── Docs & non-runtime files ──────────────────────────────────────────────────
+docs/
+*.md
+!README.md
+LICENSE
+CHANGELOG*
+CONTRIBUTING*
+
+# ── CI/CD ─────────────────────────────────────────────────────────────────────
+.github/
+.gitlab-ci.yml
+.circleci/
+Jenkinsfile
+.travis.yml
+
+# ── Editor & OS ───────────────────────────────────────────────────────────────
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.swp
+
+# ── Docker ────────────────────────────────────────────────────────────────────
+docker-compose*.yml
+Dockerfile*
+
+# ── Logs & profiling ──────────────────────────────────────────────────────────
+logs/
+*.log
+*.heapsnapshot
+*.cpuprofile
+.clinic/
+
+# ── Scripts ───────────────────────────────────────────────────────────────────
+scripts/
