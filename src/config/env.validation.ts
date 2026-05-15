@@ -17,7 +17,9 @@ const envKeys = [
 ] as const satisfies readonly EnvKey[];
 
 export const envValidationSchema = Joi.object({
-  [ENV.NODE_ENV]: Joi.string().valid('development', 'test', 'production').required(),
+  [ENV.NODE_ENV]: Joi.string()
+    .valid('development', 'test', 'production')
+    .default('production'),
   [ENV.PORT]: Joi.number().min(1024).max(65535).default(ENV_DEFAULTS.PORT),
   // [ENV.DATABASE_URL]: Joi.string().uri().required(),
   // [ENV.JWT_SECRET]: Joi.string().min(32).required(),
@@ -25,7 +27,7 @@ export const envValidationSchema = Joi.object({
   [ENV.JWT_EXPIRY]: Joi.string().default(ENV_DEFAULTS.JWT_EXPIRY),
   // [ENV.REDIS_URL]: Joi.string().uri().required(),
   [ENV.BCRYPT_ROUNDS]: Joi.number().min(10).max(14).default(ENV_DEFAULTS.BCRYPT_ROUNDS),
-  [ENV.ALLOWED_ORIGINS]: Joi.string().optional(),
+  [ENV.ALLOWED_ORIGINS]: Joi.string().default('http://localhost:3000'),
   [ENV.LOG_LEVEL]: Joi.string()
     .valid('fatal', 'error', 'warn', 'info', 'debug')
     .default(ENV_DEFAULTS.LOG_LEVEL),
