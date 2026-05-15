@@ -25,7 +25,7 @@ export const envValidationSchema = Joi.object({
   [ENV.JWT_EXPIRY]: Joi.string().default(ENV_DEFAULTS.JWT_EXPIRY),
   // [ENV.REDIS_URL]: Joi.string().uri().required(),
   [ENV.BCRYPT_ROUNDS]: Joi.number().min(10).max(14).default(ENV_DEFAULTS.BCRYPT_ROUNDS),
-  [ENV.ALLOWED_ORIGINS]: Joi.string().required(),
+  [ENV.ALLOWED_ORIGINS]: Joi.string().optional(),
   [ENV.LOG_LEVEL]: Joi.string()
     .valid('fatal', 'error', 'warn', 'info', 'debug')
     .default(ENV_DEFAULTS.LOG_LEVEL),
