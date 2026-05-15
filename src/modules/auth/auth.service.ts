@@ -19,7 +19,10 @@ export class AuthService {
 
         const user = await this.authRepository.findUserByEmail(dto.email) as any;
 
-        if(!user || dto.password !== user.password) {
+        this.logger.log(`Database returned user: ${JSON.stringify(user)}`);
+        this.logger.log(`Comparing Postman: [${dto.password}] with Database: [${user?.passwordHash}]`);
+
+        if(!user || dto.password !== user.passwordHash) {
             this.logger.warn(`Failed sign-in attempt for email: ${dto.email}`);
             throw new UnauthorizedException('Invalid credentials');
         }
