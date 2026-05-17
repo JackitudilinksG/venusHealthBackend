@@ -1,12 +1,12 @@
-import { Injectable, Logger } from '@nestjs/common';
+// import { Injectable, Logger } from '@nestjs/common';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
-import { AuthRerpository } from '../auth/auth.repository';
+// import { AuthRerpository } from '../auth/auth.repository';
 
-@Injectable()
+// @Injectable()
 export class UsersService {
-  private readonly logger = new Logger(UsersService.name);
-  constructor(private readonly authRepository: AuthRerpository) {}
+  // private readonly logger = new Logger(UsersService.name);
+  // constructor(private readonly authRepository: AuthRerpository) {}
 
   create(createUserDto: CreateUserDto) {
     return 'This action adds a new user';
