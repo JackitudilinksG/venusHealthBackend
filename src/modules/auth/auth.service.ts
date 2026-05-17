@@ -10,17 +10,9 @@ export class AuthService {
     async signIn(dto: SignInDto): Promise<SignInResponseDto> {
         this.logger.log('Sign in attempt for email:', dto.email);
 
-        // mock user for auth testign
-        // const mockDbUser = {
-        //     id: '123abc',
-        //     username: 'admin@venushealth.com',
-        //     password: 'password123'
-        // }
-
         const user = await this.authRepository.findUserByEmail(dto.email) as any;
 
-        this.logger.log(`Database returned user: ${JSON.stringify(user)}`);
-        this.logger.log(`Comparing Postman: [${dto.password}] with Database: [${user?.passwordHash}]`);
+        // this.logger.log(`Database returned user: ${JSON.stringify(user)}`);
 
         if(!user || dto.password !== user.passwordHash) {
             this.logger.warn(`Failed sign-in attempt for email: ${dto.email}`);

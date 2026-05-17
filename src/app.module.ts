@@ -12,6 +12,7 @@ import { TransformInterceptor } from './common/interceptors/transform.intercepto
 import { HealthModule } from './modules/health/health.module';
 import { AuthModule } from './modules/auth/auth.module';
 import { DatabaseModule } from './core/database/database.module';
+import { UsersModule } from './modules/users/users.module';
 
 @Module({
   imports: [
@@ -95,6 +96,7 @@ import { DatabaseModule } from './core/database/database.module';
     HealthModule,
     AuthModule,
     DatabaseModule,
+    UsersModule,
   ],
   providers: [
     GlobalExceptionFilter,
